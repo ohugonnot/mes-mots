@@ -43,8 +43,8 @@ imprime les planches sur papier, sauvegarde et restaure.
 ## Ce qui la distingue
 
 Il existe déjà des applications de CAA libres et gratuites, sérieuses et vivantes : CBoard
-(soutenu par l'UNICEF) et AsTeRICS Grid (université de Vienne). Gratuit n'est donc pas la
-promesse. Voici ce qui l'est.
+(soutenu par l'UNICEF) et AsTeRICS Grid (université des sciences appliquées de Vienne).
+Gratuit n'est donc pas la promesse. Voici ce qui l'est.
 
 **Rien ne quitte l'appareil.** Pas de compte à créer, pas de serveur à qui parler, pas de
 synchronisation. Les mots, les photos et les voix de la famille restent dans le navigateur de

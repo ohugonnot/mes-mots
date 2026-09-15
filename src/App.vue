@@ -23,6 +23,7 @@ import {
   contextePorteBouton,
   identifiantPersonnalise,
   identifiantsPersonnalises,
+  urlLivree,
   changerFormeDeGrille,
   marquerModifiee,
   modifierCase,
@@ -305,7 +306,7 @@ async function jouerSon(contenu: CaseCommunication, apres?: () => void) {
   idCaseQuiParle.value = contenu.id
   const voix = voixDeCase(contenu)
   if (voix.genre === 'synthese') return lecteur.lireTexte(voix.texte, surFin)
-  if (voix.genre === 'livre') return lecteur.jouer(`/sons/${voix.idSon}.mp3`, surFin)
+  if (voix.genre === 'livre') return lecteur.jouer(urlLivree(`sons/${voix.idSon}.mp3`), surFin)
   const son = await lireSon(voix.idSon)
   // une voix de la famille dont le blob a disparu laissait le mot muet : la tablette le lit
   if (son) lecteur.jouerBlob(son, surFin)

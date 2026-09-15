@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import {
   pageVierge,
   ajouterContexte,
@@ -26,6 +26,7 @@ import {
   identifiantDepuisMot,
   identifiantsPersonnalises,
   identifiantPersonnalise,
+  urlLivree,
   marquerModifiee,
   marquerSauvegardee,
   modifierCase,
@@ -718,6 +719,18 @@ describe('identifiantPersonnalise (P4, P8)', () => {
 
   it('rend undefined quand il n y a pas de référence du tout', () => {
     expect(identifiantPersonnalise(undefined)).toBeUndefined()
+  })
+})
+
+describe('urlLivree', () => {
+  it("colle la ressource sous l adresse de l application, et pas sous la racine du domaine", () => {
+    vi.stubEnv('BASE_URL', '/mes-mots/')
+    expect(urlLivree('images/pictos/maman.svg')).toBe('/mes-mots/images/pictos/maman.svg')
+    vi.unstubAllEnvs()
+  })
+
+  it('sur la tablette, servie à la racine, ne change rien', () => {
+    expect(urlLivree('sons/maman.mp3')).toBe('/sons/maman.mp3')
   })
 })
 

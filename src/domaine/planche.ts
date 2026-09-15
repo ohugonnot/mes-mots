@@ -149,6 +149,16 @@ export function identifiantPersonnalise(reference: string | undefined): string |
 }
 
 /**
+ * L'adresse d'une ressource livrée avec l'application, à partir de son chemin sans barre de
+ * tête. `BASE_URL` vaut « / » sur la tablette et « /mes-mots/ » pour la démo publique : une
+ * adresse écrite en dur à la racine du domaine y perdrait tous les pictogrammes et toutes
+ * les voix, sans autre signe qu'une grille de cases vides.
+ */
+export function urlLivree(chemin: string): string {
+  return import.meta.env.BASE_URL + chemin
+}
+
+/**
  * Les identifiants des photos et des sons que la famille a fournis, séparés par magasin.
  * Sert à repérer ce qui n'est plus référencé après une restauration : sans ça les blobs de
  * l'ancienne configuration restent pour toujours, sur un appareil où la place manque.

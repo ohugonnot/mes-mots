@@ -1,5 +1,5 @@
 import { computed, onUnmounted, ref, watch, type Ref } from 'vue'
-import { identifiantPersonnalise, type CaseCommunication } from '../domaine/planche'
+import { identifiantPersonnalise, urlLivree, type CaseCommunication } from '../domaine/planche'
 import { lireSon } from '../domaine/depot'
 
 /**
@@ -22,7 +22,7 @@ export function utiliserSonDeCase(contenu: Ref<Pick<CaseCommunication, 'sound_id
   const source = computed(() => {
     const idPerso = identifiantPersonnalise(referenceSon.value)
     if (idPerso) return urlPersonnalisee.value
-    return referenceSon.value ? `/sons/${referenceSon.value}.mp3` : null
+    return referenceSon.value ? urlLivree(`sons/${referenceSon.value}.mp3`) : null
   })
 
   // on suit la case entière : remplacer la voix d'un mot garde la même référence `perso/<id>`

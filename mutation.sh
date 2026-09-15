@@ -1094,6 +1094,13 @@ muter src/domaine/planche.ts \
   "  const lignes = 1" \
   "D49 aucun mot de douleur ne disparait faute de rangee"
 
+# La démo publique est servie sous un préfixe. Une adresse écrite à la racine y rend une
+# grille de cases vides, muette, sans la moindre erreur visible.
+muter src/domaine/planche.ts \
+  "  return import.meta.env.BASE_URL + chemin" \
+  "  return '/' + chemin" \
+  "D50 les pictogrammes et les voix se cherchent sous l adresse de l application"
+
 # Une mutation vérifiée en bout en bout laisse dist/ construit depuis le code cassé.
 # Sans cette reconstruction, la capture d'écran suivante montre la mutation, pas le code.
 if [ $sautees -gt 0 ]; then echo "  $sautees mutations sautées, hors des fichiers modifiés"; fi

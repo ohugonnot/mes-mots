@@ -1,5 +1,5 @@
 import { computed, onUnmounted, ref, watch, type Ref } from 'vue'
-import { identifiantPersonnalise, type CaseCommunication } from '../domaine/planche'
+import { identifiantPersonnalise, urlLivree, type CaseCommunication } from '../domaine/planche'
 import { lireImage } from '../domaine/depot'
 
 /**
@@ -28,7 +28,7 @@ export function utiliserPhotoDeCase(contenu: Ref<Pick<CaseCommunication, 'image_
     if (echecChargement.value) return null
     const idPerso = identifiantPersonnalise(referenceImage.value)
     if (idPerso) return urlPersonnalisee.value
-    return referenceImage.value ? `/images/${referenceImage.value}` : null
+    return referenceImage.value ? urlLivree(`images/${referenceImage.value}`) : null
   })
 
   // On suit la case, pas sa seule référence : remplacer la photo d'un mot garde la même

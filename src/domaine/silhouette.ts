@@ -31,6 +31,8 @@
  * vaut mieux qu'un silence : « j'ai mal au ventre » pour un torse montré est ce qu'un
  * adulte comprendra le mieux.
  */
+import { urlLivree } from './planche'
+
 export interface RegionSilhouette {
   gauche: number
   haut: number
@@ -123,6 +125,6 @@ export function estDansLaRegion(region: RegionSilhouette, x: number, y: number):
 export const COTES: CoteSilhouette[] = ['face', 'dos']
 
 export const IMAGE_DU_COTE: Record<CoteSilhouette, string> = {
-  face: '/images/corps/face.png',
-  dos: '/images/corps/dos.png',
+  face: urlLivree('images/corps/face.png'),
+  dos: urlLivree('images/corps/dos.png'),
 }
