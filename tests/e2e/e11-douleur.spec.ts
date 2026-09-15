@@ -35,7 +35,7 @@ test.describe('E11 : la planche de la douleur', () => {
   })
 
   test('viser l entrejambe dit le zizi, et le bas du dos dit les fesses', async ({ page }) => {
-    // le père a visé le zizi et touché le ventre, deux fois : le tronc descendait jusque sur
+    // le pÃ¨re a visé le zizi et touché le ventre, deux fois : le tronc descendait jusque sur
     // l'entrejambe. On touche ici le pixel du dessin, à 54 % de la hauteur du corps, et non
     // le milieu de la région, qui donnerait raison à n'importe quel placement.
     for (const [cote, phrase] of [

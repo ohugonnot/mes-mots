@@ -1,7 +1,9 @@
 # Mes mots
 
-Une application de communication par pictogrammes pour un enfant qui ne parle pas et qui ne
-lit pas encore. Il touche une case, la tablette dit le mot.
+Une application de communication alternative et améliorée (CAA) par pictogrammes, pour un
+enfant qui ne parle pas et qui ne lit pas encore. Il touche une case, la tablette dit le mot.
+
+Elle est **gratuite**, sans abonnement ni achat intégré, et le restera : le code est libre.
 
 Elle fonctionne hors ligne, s'installe depuis un lien, et **rien ne sort de l'appareil** :
 pas de compte, pas de serveur, aucune donnée transmise.
@@ -44,7 +46,7 @@ imprime les planches sur papier, sauvegarde et restaure.
 
 Il existe déjà des applications de CAA libres et gratuites, sérieuses et vivantes : CBoard
 (soutenu par l'UNICEF) et AsTeRICS Grid (université des sciences appliquées de Vienne).
-Gratuit n'est donc pas la promesse. Voici ce qui l'est.
+Face à elles, gratuit n'est pas la promesse. Voici ce qui l'est.
 
 **Rien ne quitte l'appareil.** Pas de compte à créer, pas de serveur à qui parler, pas de
 synchronisation. Les mots, les photos et les voix de la famille restent dans le navigateur de

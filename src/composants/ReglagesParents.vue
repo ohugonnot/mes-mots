@@ -204,7 +204,7 @@ const consequence = computed(() =>
     </fieldset>
 
     <!-- Le dernier groupe de l'écran, parce que c'est le seul réglage qui déplace des mots :
-         L'enfant repère les siens à leur place, et il devra en réapprendre certains. -->
+         l'enfant repère les siens à leur place, et il devra en réapprendre certains. -->
     <fieldset>
       <legend>La forme de la grille</legend>
       <!-- Les compteurs à côté de l'aperçu dès qu'il y a la place : empilés, ils poussaient

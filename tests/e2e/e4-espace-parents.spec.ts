@@ -889,7 +889,7 @@ test.describe('le coin des parents sur une vraie tablette', () => {
   test('elle répond partout sur sa rangée, bleu compris, pas seulement sur la bande blanche', async ({
     page,
   }) => {
-    // le père n'ouvrait son espace qu'en visant le blanc : le bleu autour ne répondait pas
+    // le pÃ¨re n'ouvrait son espace qu'en visant le blanc : le bleu autour ne répondait pas
     // sur la moitié droite, et à gauche il n'y en a que quelques pixels.
     await page.goto('/')
     await page.locator('[data-case]').first().waitFor()

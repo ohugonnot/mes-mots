@@ -626,7 +626,7 @@ describe('fermer l éditeur en pleine prise de voix ne laisse rien derrière', (
   })
 
   it('n crée aucune URL d objet quand onstop arrive après le démontage', async () => {
-    // Le radar : L'enfant réclame, la mère ferme l'éditeur pendant l'enregistrement ; onstop
+    // Le radar : l'enfant réclame, la mère ferme l'éditeur pendant l'enregistrement ; onstop
     // arrivait ensuite et créait une URL que plus personne ne libérait, pour toute la session.
     stubEnregistreurQuiMarche()
     const creer = vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:fantome')

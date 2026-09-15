@@ -283,7 +283,7 @@ describe('espace parents', () => {
     await ecran.get('[data-annuler-deplacement]').trigger('click')
     await ecran.get('[data-deplacer-case="loki"]').trigger('click')
 
-    // LOKI est masqué : L'enfant ne l'a jamais vu, le déplacer ne lui coûte rien
+    // LOKI est masqué : l'enfant ne l'a jamais vu, le déplacer ne lui coûte rien
     expect(ecran.find('[data-avertissement-deplacement]').exists()).toBe(false)
   })
 
@@ -588,7 +588,7 @@ describe('la version affichée', () => {
 describe('le bloc d état, à lire au téléphone', () => {
   it('compte les mots, les visibles, et les photos et voix de la famille depuis la configuration', async () => {
     // Pas de cloud, donc aucune visibilité à distance : quand la mère appelle, ce bloc est
-    // ce qu'elle lit à le père. Les chiffres viennent de l'inventaire, jamais recomptés à l'écran.
+    // ce qu'elle lit à le pÃ¨re. Les chiffres viennent de l'inventaire, jamais recomptés à l'écran.
     const avecMedias: Configuration = {
       ...CONFIGURATION_DEMO,
       contextes: CONFIGURATION_DEMO.contextes.map((contexte) => ({

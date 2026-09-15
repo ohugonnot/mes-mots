@@ -38,7 +38,7 @@ describe('le doigt a glissé', () => {
   it('laisse parler une main qui descend, même franchement', () => {
     // Le tremblement d'une main de cinq ans dépasse vite 16 px vers le bas. La case
     // renonçait alors à parler pour protéger un changement de page que ce geste ne peut
-    // pas déclencher : L'enfant appuyait, et rien ne sortait.
+    // pas déclencher : l'enfant appuyait, et rien ne sortait.
     expect(leDoigtAGlisse(deplacement(0, 17))).toBe(false)
     expect(leDoigtAGlisse(deplacement(0, 200))).toBe(false)
     expect(leDoigtAGlisse(deplacement(20, 40))).toBe(false)

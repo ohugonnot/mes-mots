@@ -386,7 +386,7 @@ test.describe("ajouter une planche sans effacer ce qui existe", () => {
     await page.locator('[data-nouveau-contexte]').click()
     await page.locator('[data-champ-nom-contexte]').fill('École')
     await page.locator('[data-valider-contexte]').click()
-    // avec son image : L'enfant ne lit pas, un contexte qui arrive sans elle n'est qu'un
+    // avec son image : l'enfant ne lit pas, un contexte qui arrive sans elle n'est qu'un
     // mot écrit de plus en haut de son écran
     await page.setInputFiles('[data-champ-image-contexte]', {
       name: 'ecole.png',

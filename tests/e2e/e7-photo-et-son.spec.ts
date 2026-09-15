@@ -303,7 +303,7 @@ test.describe('effacer toute la configuration (P10)', () => {
 
 test.describe('poser un fichier son fait ailleurs (A8)', () => {
   test('le son importé est gardé et remplace la voix livrée', async ({ page }) => {
-    // le père corrige la sauvegarde de la mère depuis son ordinateur : pas de micro devant
+    // le pÃ¨re corrige la sauvegarde de la mère depuis son ordinateur : pas de micro devant
     // la bouche de quelqu'un, mais un fichier de synthèse sous la main.
     await page.goto('/')
     await expect(page.locator('[data-case]')).toHaveCount(13)

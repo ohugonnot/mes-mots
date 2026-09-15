@@ -2,7 +2,7 @@
  * Le journal de la journée, demandé par la mère : « la liste de ce qu'il a demandé dans la
  * journée, avec l'heure ». Sa condition, et c'est elle qui l'a posée, était l'effacement
  * automatique à minuit : rien ne s'accumule, et il ne se constitue aucun dossier sur
- * L'enfant. Pas de statistiques, pas de comptage, pas de score : une liste, et rien d'autre.
+ * l'enfant. Pas de statistiques, pas de comptage, pas de score : une liste, et rien d'autre.
  */
 export interface EntreeJournal {
   /** Millisecondes depuis l'époque, au moment de l'appui. */

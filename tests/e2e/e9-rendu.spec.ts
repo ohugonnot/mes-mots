@@ -174,7 +174,7 @@ for (const ecran of ECRANS) {
       await page.screenshot({ path: `captures/${ecran.nom}-douleur.png` })
       expect(await debordeALHorizontale(page)).toBe(false)
 
-      // les deux corps tiennent dans l'écran : L'enfant ne sait pas faire défiler
+      // les deux corps tiennent dans l'écran : l'enfant ne sait pas faire défiler
       for (const cote of ['face', 'dos']) {
         const corps = (await page.locator(`[data-corps="${cote}"]`).boundingBox())!
         expect(corps.y + corps.height, `le corps de ${cote} sort de l'écran`).toBeLessThanOrEqual(

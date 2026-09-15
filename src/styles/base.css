@@ -28,7 +28,7 @@
 
   /* Largeur du blanc laissé de chaque côté de la bande quand l'enfant compose : c'est là que
      l'appui du parent porte, la zone couvrant toute la rangée mais passant derrière ce que
-     L'enfant touche. Un centimètre, la largeur d'un doigt : la bande entière est à l'enfant,
+     l'enfant touche. Un centimètre, la largeur d'un doigt : la bande entière est à l'enfant,
      et ce qu'on lui prend ici, il le perd sur ses mots. Le bleu qui borde la bande s'ajoute
      à cette prise, et la hauteur entière de la rangée avec. */
   --coin-parents-largeur: 1cm;

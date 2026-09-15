@@ -96,8 +96,8 @@ muter src/composants/CaseCommunication.vue \
   "flex: 0 0 70%;" \
   "C3 la photo garde les trois quarts de la case" e2e
 muter src/App.vue \
-  "  if (voix.genre === 'livre') return lecteur.jouer(\`/sons/\${voix.idSon}.mp3\`, surFin)" \
-  "  if (false) return lecteur.jouer(\`/sons/\${voix.idSon}.mp3\`, surFin)" \
+  "  if (voix.genre === 'livre') return lecteur.jouer(urlLivree(\`sons/\${voix.idSon}.mp3\`), surFin)" \
+  "  if (false) return lecteur.jouer(urlLivree(\`sons/\${voix.idSon}.mp3\`), surFin)" \
   "C4 lecture du son au toucher"
 muter src/composants/CaseCommunication.vue \
   ':class="{ enfoncee, parle: props.parle }"' \
@@ -667,7 +667,7 @@ muter src/composants/EditeurCase.vue \
   "A8 un fichier trop lourd pour un mot est refusé"
 
 muter src/composables/sonDeCase.ts \
-  "    return referenceSon.value ? \`/sons/\${referenceSon.value}.mp3\` : null" \
+  "    return referenceSon.value ? urlLivree(\`sons/\${referenceSon.value}.mp3\`) : null" \
   "    return null" \
   "A11 le parent peut écouter la voix livrée avant de la refaire"
 
@@ -1108,6 +1108,13 @@ muter src/domaine/planche.ts \
   "  return import.meta.env.BASE_URL + chemin" \
   "  return '/' + chemin" \
   "D50 les pictogrammes et les voix se cherchent sous l adresse de l application"
+
+# Le même piège, un appelant plus loin : la sauvegarde va chercher chaque ressource livrée
+# par le réseau. Sous un préfixe, elle les déclare toutes manquantes et l'archive part vide.
+muter src/domaine/sauvegarde.ts \
+  "  const reponse = await fetch(urlLivree(chemin))" \
+  "  const reponse = await fetch(\`/\${chemin}\`)" \
+  "D52 la sauvegarde ramasse les ressources sous l adresse de l application"
 
 # Une mutation vérifiée en bout en bout laisse dist/ construit depuis le code cassé.
 # Sans cette reconstruction, la capture d'écran suivante montre la mutation, pas le code.

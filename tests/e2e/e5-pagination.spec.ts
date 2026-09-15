@@ -349,7 +349,7 @@ test.describe('E5 : retour automatique après 30 secondes (T6)', () => {
 
 test.describe('déplacer un mot d une page à l autre', () => {
   test('le mot quitte la première page et se pose sur la seconde', async ({ page }) => {
-    // Vécu par le père : le déplacement ne marchait qu'à l'intérieur d'une page, alors qu'un
+    // Vécu par le pÃ¨re : le déplacement ne marchait qu'à l'intérieur d'une page, alors qu'un
     // contexte peut en avoir plusieurs, et rien ne le disait.
     await page.goto('/')
     await ouvrirEspaceParents(page)

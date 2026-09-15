@@ -218,7 +218,7 @@ test.describe('E1 : la grille qui parle', () => {
   })
 
   test('la case s enfonce sous le doigt puis se relève', async ({ page }) => {
-    // exigence C6 : L'enfant doit voir que son geste a été pris
+    // exigence C6 : l'enfant doit voir que son geste a été pris
     const carte = page.locator('[data-case="oui"]')
     const boite = await rectangle(page, 'oui')
     const decalage = () =>

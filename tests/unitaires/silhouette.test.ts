@@ -54,7 +54,7 @@ describe('les régions des deux corps', () => {
   })
 
   it('pose les zones intimes sur l entrejambe du dessin, pas sous lui', () => {
-    // le père a visé le zizi et touché le ventre, deux fois : le tronc descendait jusque
+    // le pÃ¨re a visé le zizi et touché le ventre, deux fois : le tronc descendait jusque
     // sur l'entrejambe. L'entrejambe du dessin de face est mesuré à 54,4 % de la hauteur,
     // le pli des fesses de dos entre 54 et 56 %. Chaque zone intime doit les contenir.
     expect(contient(regionsDe('face', 'zizi')[0]!, 54.4), 'le zizi rate l entrejambe').toBe(true)

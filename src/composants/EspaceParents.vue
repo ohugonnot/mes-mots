@@ -48,7 +48,7 @@ const etatMiseAJour = ref('')
 /**
  * Recharge la page, ce qui est la seule façon de passer à la version que le service worker
  * vient d'installer. Proposé ici et jamais fait tout seul : un rechargement pendant que
- * L'enfant touche une case couperait le son et viderait la bande de phrase.
+ * l'enfant touche une case couperait le son et viderait la bande de phrase.
  */
 function redemarrerMaintenant() {
   location.reload()
@@ -615,7 +615,7 @@ let effacementDuMessage: ReturnType<typeof setTimeout> | null = null
 function annoncerLAjout(mot: string) {
   const numeroDePage = indexPageAffichee.value + 1
   if (numeroDePage <= 1) return
-  messageAjout.value = `${mot} est posé sur la page ${numeroDePage} : L'enfant le trouvera en tournant la page.`
+  messageAjout.value = `${mot} est posé sur la page ${numeroDePage} : l'enfant le trouvera en tournant la page.`
   if (effacementDuMessage) clearTimeout(effacementDuMessage)
   effacementDuMessage = setTimeout(() => (messageAjout.value = ''), 12_000)
 }
@@ -741,7 +741,7 @@ onUnmounted(() => {
               <!-- La notice appelle « ne jamais déplacer un mot connu » la règle la plus
                    importante de l'application. Le bandeau, lui, rassurait. -->
               <strong v-if="!deplacement.contenu.hidden" data-avertissement-deplacement>
-                Ce mot est déjà affiché : L'enfant le cherchera à son ancienne place.
+                Ce mot est déjà affiché : l'enfant le cherchera à son ancienne place.
               </strong>
             </span>
             <button type="button" data-annuler-deplacement @click="deplacement = null">
@@ -1779,7 +1779,7 @@ onUnmounted(() => {
 }
 
 /* Un label et non un bouton : l'entrée fichier vit dedans, cachée. Il porte l'image que
-   L'enfant voit, pour que le parent sache ce qu'il remplace. */
+   l'enfant voit, pour que le parent sache ce qu'il remplace. */
 .bouton-image-contexte {
   display: flex;
   align-items: center;

@@ -45,7 +45,7 @@ export interface RegionSilhouette {
 export type CoteSilhouette = 'face' | 'dos'
 
 /**
- * Un même mot occupe souvent deux régions : L'enfant montre la main qui lui fait mal, pas
+ * Un même mot occupe souvent deux régions : l'enfant montre la main qui lui fait mal, pas
  * celle que le dessin désigne. Les deux disent la même phrase.
  */
 const REGIONS: Record<CoteSilhouette, Record<string, RegionSilhouette[]>> = {

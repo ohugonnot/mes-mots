@@ -1,7 +1,10 @@
 # Mes mots (My words)
 
-A picture-based communication app for a child who doesn't speak and can't read yet. They
-touch a cell, the tablet says the word.
+An augmentative and alternative communication (AAC) app for a child who doesn't speak and
+can't read yet. They touch a cell, the tablet says the word.
+
+It is **free**, with no subscription and no in-app purchase, and it will stay that way: the
+code is open source.
 
 It works offline, installs from a link, and **nothing ever leaves the device**: no account,
 no server, no data sent anywhere.
@@ -45,7 +48,8 @@ boards on paper, back up and restore.
 ## What makes it different
 
 Free and open AAC apps already exist, and good ones: CBoard (backed by UNICEF) and AsTeRICS
-Grid (University of Applied Sciences Technikum Wien). Free is not the promise. This is.
+Grid (University of Applied Sciences Technikum Wien). Against those, free is not the promise.
+This is.
 
 **Nothing leaves the device.** No account to create, no server to talk to, no sync. The
 words, photos and recorded voices stay in the tablet's browser storage. That's also the

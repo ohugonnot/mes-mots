@@ -87,10 +87,13 @@ test.describe('E14 : la grille sur papier', () => {
       .evaluate((cellule) => {
         const dessin = cellule.querySelector('.dessin')!.getBoundingClientRect()
         const image = cellule.querySelector('[data-vignette]')!.getBoundingClientRect()
-        return { dessin: dessin.height, image: image.height }
+        return { dessin, image }
       })
 
-    expect(mesures.image).toBeGreaterThan(mesures.dessin * 0.8)
+    // Les deux dimensions, sinon un pictogramme aplati en bandeau passerait : mesuré ici à
+    // 168 px de côté dans une case de 183 sur 177.
+    expect(mesures.image.width).toBeGreaterThan(mesures.dessin.width * 0.8)
+    expect(mesures.image.height).toBeGreaterThan(mesures.dessin.height * 0.8)
   })
 
   test('le bouton d impression vit à côté de la sauvegarde, deux gestes de la même famille', async ({

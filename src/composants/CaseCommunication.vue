@@ -113,7 +113,7 @@ function annulerAppui() {
    enfant, sinon le `overflow: hidden` au-dessus le rogne entièrement, ce qui le rendait
    invisible. Rien ne se déplace, ni elle ni ses voisines : seuls `transform` et `box-shadow`
    sont animés, la grille ne bouge pas d'un pixel. C'est le seul mouvement de l'écran de
-   L'enfant, et il répond toujours à son geste, jamais de son propre chef. */
+   l'enfant, et il répond toujours à son geste, jamais de son propre chef. */
 .case.parle {
   /* au-dessus de ses voisines le temps que l'anneau la traverse */
   z-index: 1;
@@ -123,7 +123,7 @@ function annulerAppui() {
 }
 
 /* « Réduire les animations » ramenait toutes nos durées à zéro, et la case ne répondait plus
-   du tout : L'enfant perdait le lien entre son geste et le mot. On lève la règle globale pour
+   du tout : l'enfant perdait le lien entre son geste et le mot. On lève la règle globale pour
    ce seul retour, qui répond à son doigt et ne part jamais tout seul. Ce qui gêne dans ce
    réglage, c'est ce qui grossit et se déplace : l'anneau reste, la case ne bouge plus. */
 @media (prefers-reduced-motion: reduce) {

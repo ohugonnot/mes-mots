@@ -19,7 +19,7 @@ describe('lecteur audio', () => {
   })
 
   it('coupe la phrase en cours quand une nouvelle commence', () => {
-    // exigence EF-03. C'est le cœur du confort d'usage : L'enfant qui change d'avis
+    // exigence EF-03. C'est le cœur du confort d'usage : l'enfant qui change d'avis
     // entend son nouveau mot tout de suite, il n'attend pas la fin du précédent.
     const lecteur = new LecteurAudio()
     lecteur.jouer('/sons/oui.mp3')

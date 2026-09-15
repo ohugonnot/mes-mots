@@ -41,7 +41,7 @@ const CLE = 'configuration'
 /**
  * Numéro d'écriture de la configuration, monté d'un à chaque enregistrement (D15). Rangé à
  * part et non dans la configuration : il appartient au dépôt, pas au vocabulaire de
- * L'enfant, et il n'a rien à faire dans une sauvegarde `.obz`.
+ * l'enfant, et il n'a rien à faire dans une sauvegarde `.obz`.
  */
 const CLE_VERSION = 'version'
 /** Clé de la version 1, quand une seule planche existait et qu'il n'y avait pas de barre. */
@@ -204,7 +204,7 @@ export async function enregistrerConfiguration(configuration: Configuration): Pr
 }
 
 /**
- * Place occupée et quota, pour que la mère puisse les lire au téléphone à le père : sans
+ * Place occupée et quota, pour que la mère puisse les lire au téléphone à le pÃ¨re : sans
  * cloud, c'est le seul moyen de voir l'état de la tablette à distance. Absent sur certains
  * navigateurs, d'où le `null` plutôt qu'une erreur.
  */

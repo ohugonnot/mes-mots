@@ -12,7 +12,7 @@ import {
   typeDesOctets,
   type Inventaire,
 } from './archive'
-import { marquerSauvegardee, type Configuration } from './planche'
+import { marquerSauvegardee, urlLivree, type Configuration } from './planche'
 import { enregistrerImage, enregistrerSon, lireImage, lireSon } from './depot'
 
 /** Tire AAAA-MM-JJ de la date ISO de l'inventaire : le nom de fichier ne peut jamais
@@ -35,7 +35,7 @@ async function lireRessource(chemin: string): Promise<Uint8Array> {
     if (!blob) throw new Error(`ressource personnalisée absente du magasin : ${idPerso}`)
     return new Uint8Array(await blob.arrayBuffer())
   }
-  const reponse = await fetch(`/${chemin}`)
+  const reponse = await fetch(urlLivree(chemin))
   if (!reponse.ok) throw new Error(`statut ${reponse.status}`)
   // Un serveur d'application à page unique rend 200 et sa page d'accueil pour n'importe
   // quel chemin inconnu : sans ce contrôle, un pictogramme disparu d'une mise à jour se

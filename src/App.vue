@@ -143,7 +143,7 @@ const derniereActivationParCase = new Map<string, number>()
 
 let verrouEcran: WakeLockSentinel | null = null
 
-/** Un contexte dont aucune page n'est atteignable n'a pas de bouton : L'enfant n'y trouverait rien. */
+/** Un contexte dont aucune page n'est atteignable n'a pas de bouton : l'enfant n'y trouverait rien. */
 const contextes = computed(
   () => configuration.value?.contextes.filter(contextePorteBouton) ?? [],
 )
@@ -218,7 +218,7 @@ function choisirContexte(id: string) {
   rearmerRetour()
 }
 
-/** Change de page si la voisine existe. Pas de bouclage : L'enfant doit sentir le bord. */
+/** Change de page si la voisine existe. Pas de bouclage : l'enfant doit sentir le bord. */
 function changerDePageEnfant(pas: 1 | -1): boolean {
   const voisine = pages.value[indexPage.value + pas]
   rearmerRetour()
@@ -256,7 +256,7 @@ function surAppui(source: Planche, id: string, debutMs: number, finMs: number) {
   dernierePhrase.value = contenu.vocalization
   derniereCase.value = contenu
   // Toutes les cases se posent, la planche « J'ai mal » comprise. L'exception qu'on avait
-  // prévue pour elle vidait la bande de son écho : L'enfant touchait son ventre et plus
+  // prévue pour elle vidait la bande de son écho : l'enfant touchait son ventre et plus
   // rien ne s'écrivait en haut, alors que c'est là que le parent relit ce qu'il a dit.
   if (enchainement.value) phrase.value = ajouterALaPhrase(phrase.value, contenu)
   // un mot demandé pendant la relecture l'interrompt : c'est lui qu'on vient de toucher
@@ -269,7 +269,7 @@ function surAppui(source: Planche, id: string, debutMs: number, finMs: number) {
 
 /** Un son personnalisé (P8) se lit dans le dépôt, pas à une URL : il n'existe pas de fichier. */
 /**
- * Case dont le mot est en train d'être dit. Sert au retour visuel : L'enfant voit sa case
+ * Case dont le mot est en train d'être dit. Sert au retour visuel : l'enfant voit sa case
  * vivre tant qu'elle parle, ce qui lie le geste au son. La mère le demandait, et la
  * recherche consignée en BIBLE §9 va dans le même sens : l'attrait sensoriel est ce qui
  * fait qu'un enfant s'approprie l'outil au lieu de le subir.
@@ -1238,7 +1238,7 @@ onUnmounted(() => {
   width: clamp(44px, 7vh, 64px);
   height: 100%;
   /* le trait du contrôle de pagination, l'autre commande de cet écran qui appartient à
-     L'enfant : un filet gris pâle tombait à 1,4:1 sur le blanc de la bande */
+     l'enfant : un filet gris pâle tombait à 1,4:1 sur le blanc de la bande */
   border: var(--case-anneau) solid var(--encre);
   border-radius: var(--case-rayon);
   background: var(--blanc);

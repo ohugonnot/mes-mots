@@ -7,7 +7,7 @@ const emit = defineEmits<{ ouvrir: [] }>()
 const SEUIL_APPUI_LONG_MS = 3000
 /**
  * L'addition change à chaque ouverture, et l'ordre des réponses aussi. Une question figée
- * ne protégeait que d'un devineur aveugle : L'enfant verra ce geste des centaines de fois
+ * ne protégeait que d'un devineur aveugle : l'enfant verra ce geste des centaines de fois
  * au fil des années, et le code du projet a vocation à être public. Il faut résoudre
  * l'addition, pas se souvenir d'une position.
  */

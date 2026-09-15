@@ -9,7 +9,7 @@ const emit = defineEmits<{ precedente: []; suivante: [] }>()
 </script>
 
 <template>
-  <!-- aux extrémités la flèche qui ne mène nulle part n'est pas affichée : L'enfant doit
+  <!-- aux extrémités la flèche qui ne mène nulle part n'est pas affichée : l'enfant doit
        sentir le bord, et une cible inerte enseigne l'échec -->
   <button
     type="button"
@@ -24,7 +24,7 @@ const emit = defineEmits<{ precedente: []; suivante: [] }>()
       <path d="M15 4 L7 12 L15 20 Z" />
     </svg>
   </button>
-  <!-- des pastilles et aucun chiffre : L'enfant ne lit pas. Elles informent et ne sont pas
+  <!-- des pastilles et aucun chiffre : l'enfant ne lit pas. Elles informent et ne sont pas
        cliquables, une cible de cette taille serait peu fiable -->
   <span class="pastilles" data-pastilles aria-hidden="true">
     <span

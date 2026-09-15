@@ -14,7 +14,7 @@ const { source, signalerEchec } = utiliserPhotoDeCase(
 </script>
 
 <template>
-  <!-- L'image seule quand il y en a une : L'enfant ne lit pas, et à trois contextes le nom
+  <!-- L'image seule quand il y en a une : l'enfant ne lit pas, et à trois contextes le nom
        n'avait plus la place que pour « M… », ce qui n'apprend rien à personne. Le nom reste
        pour un contexte sans image, et le nom complet est toujours là pour un lecteur d'écran. -->
   <button

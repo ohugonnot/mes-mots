@@ -73,12 +73,12 @@ export interface Reglages {
   animations: boolean
   /** La bande du haut garde-t-elle les mots les uns après les autres ? Éteint à la
    *  livraison : la combinaison s'enseigne, et rien ne dit qu'elle soit à la portée de
-   *  L'enfant aujourd'hui. Voir projet/PLAN-ENCHAINEMENT.md. */
+   *  l'enfant aujourd'hui. Voir projet/PLAN-ENCHAINEMENT.md. */
   enchainement: boolean
   /** « J'ai mal » se montre-t-il sur deux corps à toucher, ou en cases comme le reste de la
    *  tablette ? Les deux portent les mêmes mots à la même place : seule la forme change.
    *  Éteint à la livraison depuis le 15 septembre : les corps dessinés faisaient peur à
-   *  L'enfant. Voir projet/PLAN-JAI-MAL-DEUX-MODES.md. */
+   *  l'enfant. Voir projet/PLAN-JAI-MAL-DEUX-MODES.md. */
   corpsAToucher: boolean
 }
 
@@ -113,7 +113,7 @@ export interface Configuration {
   reglages: Reglages
 }
 
-/** Page dont aucune case n'est révélée : L'enfant n'y trouverait rien, elle est une impasse. */
+/** Page dont aucune case n'est révélée : l'enfant n'y trouverait rien, elle est une impasse. */
 export function pageAtteignable(planche: Planche): boolean {
   return planche.grid.order.flat().some((id) => {
     if (id === null) return false
@@ -142,7 +142,7 @@ const PREFIXE_PERSO = 'perso/'
 /**
  * Rend l'identifiant de case si `reference` est une photo ou un son ajouté par la famille
  * (`perso/<idCase>`, P4 et P8), undefined si elle pointe une ressource livrée avec
- * l'application (`/images/` ou `/sons/`). Seul point de ce discernement dans tout le code.
+ * l'application (dossiers `images` ou `sons`). Seul point de ce discernement dans le code.
  */
 export function identifiantPersonnalise(reference: string | undefined): string | undefined {
   return reference?.startsWith(PREFIXE_PERSO) ? reference.slice(PREFIXE_PERSO.length) : undefined
@@ -623,7 +623,7 @@ function identifiantDeContexte(nom: string, configuration: Configuration): strin
 }
 
 /**
- * Le nom d'un contexte n'est pas décoratif : L'enfant ne lit pas, et deux boutons du même
+ * Le nom d'un contexte n'est pas décoratif : l'enfant ne lit pas, et deux boutons du même
  * nom ouvrent pour lui deux mondes qu'il ne peut pas distinguer. Comparé réduit, donc
  * « École » et « Ecole » sont un seul nom : c'est déjà cette égalité-là qui fait sortir le
  * suffixe `-2` de `identifiantDeContexte`. `idAExclure` laisse un contexte garder le sien.
@@ -640,7 +640,7 @@ export function contexteDuMemeNom(
 }
 
 /**
- * Ajoute un contexte **en fin de liste**, jamais entre deux autres : L'enfant apprend la
+ * Ajoute un contexte **en fin de liste**, jamais entre deux autres : l'enfant apprend la
  * place de « Maison » comme celle de « BOIRE », et rien ne se réordonne jamais. Il naît avec
  * une page vide et ne montrera son bouton qu'une fois un mot révélé, comme toute page.
  * Nom vide, nom déjà pris ou sixième contexte : configuration inchangée.
@@ -700,7 +700,7 @@ export const imagePersonnaliseeDeContexte = (idContexte: string): string =>
   `${PREFIXE_PERSO}contexte-${idContexte}`
 
 /**
- * Retire un contexte et tout ce qu'il porte. Refuse le dernier restant : L'enfant se
+ * Retire un contexte et tout ce qu'il porte. Refuse le dernier restant : l'enfant se
  * retrouverait sans aucun mot, et rien ne permettrait d'en recréer un, faute de modèle de
  * géométrie.
  */
@@ -844,7 +844,7 @@ export interface FormeDeGrille {
 }
 
 export interface ConsequencesDeForme {
-  /** Mots qui gardent leur ligne et leur colonne : L'enfant n'a rien à réapprendre d'eux. */
+  /** Mots qui gardent leur ligne et leur colonne : l'enfant n'a rien à réapprendre d'eux. */
   gardes: number
   /** Mots dont la ligne ou la colonne disparaît, et qui partent sur une page nouvelle. */
   deplaces: number

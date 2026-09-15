@@ -146,7 +146,7 @@ const POIDS_SON_MAXIMAL = 2 * 1024 * 1024
 
 /**
  * Poser un fichier son fait ailleurs, à côté de l'enregistrement au micro. Le flux
- * d'échange du projet le réclame : la mère envoie sa sauvegarde, le père corrige depuis son
+ * d'échange du projet le réclame : la mère envoie sa sauvegarde, le pÃ¨re corrige depuis son
  * ordinateur, où il n'a personne devant un micro mais un fichier de synthèse sous la main.
  */
 async function surChoixSon(evenement: Event) {
@@ -235,7 +235,7 @@ const { source: urlSonActuel } = utiliserSonDeCase(caseApresEnregistrement)
 /**
  * Le parent a réécrit le texte alors qu'un enregistrement parlera : la tablette dira encore
  * l'ancien mot. C'est exactement ce qui est arrivé à la mère, qui a écrit « C'est moi
- * L'enfant » et entendu « Moi ». On ne peut pas le deviner à la lecture, on le dit ici.
+ * l'enfant » et entendu « Moi ». On ne peut pas le deviner à la lecture, on le dit ici.
  */
 const texteChangeSansVoix = computed(
   () =>

@@ -41,7 +41,7 @@ describe('case de communication', () => {
   })
 
   it('enfonce la carte pendant l appui et la relève ensuite', async () => {
-    // exigence C6 : L'enfant doit voir que son geste a été pris
+    // exigence C6 : l'enfant doit voir que son geste a été pris
     const oui = carte()
     await oui.trigger('pointerdown')
     expect(oui.classes()).toContain('enfoncee')
