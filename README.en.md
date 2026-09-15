@@ -131,3 +131,9 @@ whether a picture grid suits them, and which pictures.
 
 This app was written for one child, from the needs one family described. It is published
 because it may help elsewhere, not because it would suit everyone.
+
+There is no guaranteed support, no promised roadmap, and no commitment to reply. Development
+follows one family's needs and nothing else. Plenty of assistive-tech projects die of that
+weight rather than of a lack of interest, so it is better said plainly than quietly hoped for.
+Issues stay open, contributions are welcome, and the licence lets you take the project over if
+I stop.

@@ -1,6 +1,8 @@
 {
   "name": "caa-app",
   "version": "0.1.0",
+  "description": "Application de communication par pictogrammes, hors ligne et sans compte",
+  "license": "AGPL-3.0-or-later",
   "private": true,
   "type": "module",
   "scripts": {

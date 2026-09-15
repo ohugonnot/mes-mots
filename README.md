@@ -140,3 +140,9 @@ et saura dire si une grille de pictogrammes lui convient, et lesquels.
 Cette application a été écrite pour un enfant précis, sur les besoins que sa famille a
 décrits. Elle est publiée parce qu'elle peut servir ailleurs, pas parce qu'elle conviendrait
 à tous.
+
+Il n'y a ni support garanti, ni feuille de route promise, ni engagement de répondre. Le
+développement suit les besoins d'une famille, et rien d'autre. Beaucoup de projets d'aide
+technique meurent de cette charge-là, pas du manque d'intérêt : autant le dire franchement
+plutôt que de laisser espérer. Les issues restent ouvertes, les contributions bienvenues,
+et la licence vous laisse reprendre le projet si je m'arrête.
