@@ -1,0 +1,37 @@
+# Porte ciblée : quel fichier source rattache quels tests de bout en bout.
+# Une ligne par motif de chemin, suivi des noms de fichiers de test (sans .spec.ts),
+# ou * pour toute la suite. Un fichier modifié qui ne correspond à aucune ligne
+# renvoie toute la suite : mieux vaut trop que pas assez.
+src/App.vue	*
+src/domaine/planche.ts	*
+src/domaine/depot.ts	*
+src/domaine/plancheDemo.ts	*
+src/styles/	*
+src/composants/CaseCommunication.vue	e1-grille-qui-parle e2-persistance e7-photo-et-son
+src/composants/SilhouetteCommunication.vue	e11-douleur
+src/domaine/silhouette.ts	e11-douleur
+src/composants/GrilleCommunication.vue	e1-grille-qui-parle e3-structure e4-espace-parents e9-rendu
+src/composants/EspaceParents.vue	e4-espace-parents e5-pagination e6-sauvegarde e7-photo-et-son e9-rendu e16-forme-grille
+src/composants/EditeurCase.vue	e4-espace-parents e7-photo-et-son
+src/composants/VerrouParents.vue	e4-espace-parents e15-enchainement
+src/composants/ControlePagination.vue	e5-pagination e9-rendu
+src/composants/BoutonContexte.vue	e9-rendu e10-contextes
+src/composants/VignetteCase.vue	e4-espace-parents e7-photo-et-son
+src/composants/SauvegardeParents.vue	e6-sauvegarde
+src/composants/RestaurationParents.vue	e6-sauvegarde
+src/composants/RappelSauvegarde.vue	e6-sauvegarde
+src/composants/PlanchesAImprimer.vue	e14-impression
+src/composables/glissementPage.ts	e5-pagination
+src/composables/photoDeCase.ts	e4-espace-parents e7-photo-et-son
+src/composables/sonDeCase.ts	e4-espace-parents e7-photo-et-son
+src/domaine/reglages.ts	e1-grille-qui-parle e4-espace-parents
+src/composants/ReglagesParents.vue	e4-espace-parents e15-enchainement e16-forme-grille
+src/domaine/archive.ts	e6-sauvegarde
+src/domaine/sauvegarde.ts	e6-sauvegarde
+src/domaine/image.ts	e7-photo-et-son
+src/domaine/taille.ts	e4-espace-parents e6-sauvegarde
+src/domaine/lecteurAudio.ts	e1-grille-qui-parle e4-espace-parents e7-photo-et-son
+src/domaine/glissement.ts	e5-pagination
+src/domaine/protectionAppui.ts	e1-grille-qui-parle
+src/domaine/palette.ts	e4-espace-parents
+src/domaine/phrase.ts	e15-enchainement

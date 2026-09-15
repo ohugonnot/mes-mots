@@ -1,0 +1,312 @@
+/* Feuille de style de la notice papier. Deux contraintes commandent tout ce qui suit :
+   la mère est dyslexique, et elle lira ce document une main sur la tablette.
+   Donc : gros corps, interlignage large, lignes courtes, jamais de texte justifié
+   (la justification creuse des rivières de blanc, c'est ce qui gêne le plus à la lecture),
+   et une image à côté de chaque geste plutôt qu'un paragraphe qui le décrit. */
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../public/polices/fredoka-600.woff2') format('woff2');
+  font-weight: 600;
+}
+
+:root {
+  --encre: #12304f;
+  --encre-claire: #4a6480;
+  --ciel: #a9dcfb;
+  --ciel-pale: #eaf6fe;
+  --trait: #c3d7e6;
+  --alerte: #b3261e;
+  --alerte-pale: #fdeceb;
+  --vert: #1d6b3f;
+  --vert-pale: #e9f5ee;
+}
+
+@page {
+  size: A4;
+  margin: 16mm 15mm 18mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DejaVu Sans', Verdana, Tahoma, sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.65;
+  color: var(--encre);
+  /* jamais justifié */
+  text-align: left;
+  hyphens: none;
+}
+
+p,
+li {
+  max-width: 62ch;
+}
+
+/* ---------- couverture ---------- */
+
+.couverture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 247mm;
+  page-break-after: always;
+  text-align: center;
+}
+
+.couverture img.icone {
+  width: 34mm;
+  margin: 0 auto 10mm;
+}
+
+.couverture h1 {
+  margin: 0;
+  font-family: 'Fredoka', 'DejaVu Sans', sans-serif;
+  font-size: 40pt;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.couverture .sous-titre {
+  max-width: none;
+  margin: 4mm auto 0;
+  font-size: 15pt;
+  color: var(--encre-claire);
+}
+
+.couverture .pitch {
+  max-width: 105mm;
+  margin: 14mm auto 0;
+  font-size: 12pt;
+  line-height: 1.7;
+}
+
+.couverture .pied {
+  margin-top: auto;
+  font-size: 9.5pt;
+  color: var(--encre-claire);
+}
+
+/* ---------- sommaire ---------- */
+
+.sommaire {
+  page-break-after: always;
+}
+
+.sommaire ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: 10mm;
+}
+
+.sommaire li {
+  max-width: none;
+  padding: 1.4mm 0;
+  border-bottom: 1px dotted var(--trait);
+  break-inside: avoid;
+  font-size: 10.5pt;
+}
+
+.sommaire .num {
+  display: inline-block;
+  width: 7mm;
+  color: var(--encre-claire);
+}
+
+/* ---------- titres ---------- */
+
+h2 {
+  margin: 0 0 3mm;
+  padding-bottom: 2mm;
+  border-bottom: 3px solid var(--ciel);
+  font-family: 'Fredoka', 'DejaVu Sans', sans-serif;
+  font-size: 21pt;
+  line-height: 1.15;
+}
+
+h3 {
+  margin: 8mm 0 2mm;
+  font-family: 'Fredoka', 'DejaVu Sans', sans-serif;
+  font-size: 13.5pt;
+}
+
+section {
+  page-break-before: always;
+}
+
+section.suite {
+  page-break-before: auto;
+  margin-top: 10mm;
+}
+
+/* ---------- gestes numérotés ---------- */
+
+ol.gestes {
+  margin: 4mm 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: geste;
+}
+
+ol.gestes > li {
+  position: relative;
+  max-width: 62ch;
+  margin-bottom: 3.5mm;
+  padding-left: 11mm;
+  break-inside: avoid;
+  counter-increment: geste;
+}
+
+ol.gestes > li::before {
+  content: counter(geste);
+  position: absolute;
+  top: 0.4mm;
+  left: 0;
+  width: 7.5mm;
+  height: 7.5mm;
+  border-radius: 50%;
+  background: var(--encre);
+  color: #fff;
+  font-size: 11pt;
+  font-weight: bold;
+  line-height: 7.5mm;
+  text-align: center;
+}
+
+/* ---------- captures ---------- */
+
+figure {
+  margin: 5mm 0 0;
+  max-width: 120mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Bornée en hauteur autant qu'en largeur : une capture de tablette fait 800 sur 1280, et
+   posée à la largeur du texte elle prenait la page entière pour un seul écran. */
+figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 88mm;
+  border: 1.5px solid var(--trait);
+  border-radius: 3mm;
+}
+
+figure.etroite {
+  max-width: 76mm;
+}
+
+figure.large img {
+  max-height: 140mm;
+}
+
+figcaption {
+  max-width: 62ch;
+  margin-top: 2mm;
+  color: var(--encre-claire);
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+
+.duo {
+  display: flex;
+  gap: 6mm;
+  align-items: flex-start;
+  break-inside: avoid;
+}
+
+/* Deux colonnes égales, et non deux figures à la taille de leur image : une légende posée
+   sous une vignette étroite se casse en mots isolés. */
+.duo figure {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  margin-top: 0;
+}
+
+/* ---------- encarts ---------- */
+
+.encart {
+  margin: 5mm 0;
+  padding: 4mm 5mm;
+  border-left: 4px solid var(--ciel);
+  border-radius: 0 2mm 2mm 0;
+  background: var(--ciel-pale);
+  break-inside: avoid;
+}
+
+.encart p:first-child {
+  margin-top: 0;
+}
+
+.encart p:last-child {
+  margin-bottom: 0;
+}
+
+.encart.grave {
+  border-left-color: var(--alerte);
+  background: var(--alerte-pale);
+}
+
+.encart.bien {
+  border-left-color: var(--vert);
+  background: var(--vert-pale);
+}
+
+.encart .etiquette {
+  display: block;
+  margin-bottom: 1.5mm;
+  font-family: 'Fredoka', 'DejaVu Sans', sans-serif;
+  font-size: 11pt;
+}
+
+.encart.grave .etiquette {
+  color: var(--alerte);
+}
+
+.encart.bien .etiquette {
+  color: var(--vert);
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Le libellé d'un bouton, écrit comme il est à l'écran : on doit pouvoir le chercher des
+   yeux sur la tablette sans se demander si c'est un mot de la notice ou un mot du bouton. */
+.bouton {
+  padding: 0.4mm 1.6mm;
+  border: 1px solid var(--trait);
+  border-radius: 1.5mm;
+  background: #fff;
+  font-size: 10.5pt;
+  white-space: nowrap;
+}
+
+table.repere {
+  width: 100%;
+  margin-top: 4mm;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+
+table.repere th,
+table.repere td {
+  padding: 2mm 3mm;
+  border-bottom: 1px solid var(--trait);
+  text-align: left;
+  vertical-align: top;
+}
+
+table.repere th {
+  background: var(--ciel-pale);
+  font-family: 'Fredoka', 'DejaVu Sans', sans-serif;
+  font-weight: normal;
+}

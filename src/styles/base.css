@@ -1,0 +1,102 @@
+/* Registre visuel inspiré de Lucas & Friends, l'application que l'enfant utilise déjà et
+   apprécie : couleurs saturées, formes très arrondies, cadres épais, aspect autocollant.
+   Les valeurs de contraste et de taille restent celles de projet/BIBLE.md section 6 :
+   ce sont des exigences d'accessibilité, la couleur ne les négocie pas. */
+
+@font-face {
+  font-family: 'Fredoka';
+  src: url('/polices/fredoka-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+
+:root {
+  /* Géométrie de la carte, proportionnelle à l'écran plutôt que figée en pixels. Sur un
+     téléphone de 360 px, quatorze pixels d'espacement mangeaient un cinquième de la
+     largeur utile et la case tombait à 1,9 cm. La borne haute est la valeur de la
+     tablette : à 800x1280 l'espacement vaut exactement quatorze pixels et rien ne change.
+     min() borne par la hauteur autant que par la largeur, sinon un téléphone couché
+     reprend les grandes valeurs alors que c'est la hauteur qui lui manque.
+     Tout le reste est un multiple de l'espacement : une seule molette à tourner. */
+  --case-espacement: clamp(6px, min(1.75vw, 1.1vh), 14px);
+  --case-rayon: calc(var(--case-espacement) * 1.86);
+  /* 22 et non 25 % : trois points rendus à l'image, que la mère trouvait trop petite. Le
+     mot garde sa lisibilité, sa police étant bornée par la hauteur autant que la largeur. */
+  --case-etiquette-hauteur: 22%;
+  --case-anneau: max(3px, calc(var(--case-espacement) * 0.36));
+  --case-relief: calc(var(--case-espacement) * 0.5);
+
+  /* Largeur du blanc laissé de chaque côté de la bande quand l'enfant compose : c'est là que
+     l'appui du parent porte, la zone couvrant toute la rangée mais passant derrière ce que
+     L'enfant touche. Un centimètre, la largeur d'un doigt : la bande entière est à l'enfant,
+     et ce qu'on lui prend ici, il le perd sur ses mots. Le bleu qui borde la bande s'ajoute
+     à cette prise, et la hauteur entière de la rangée avec. */
+  --coin-parents-largeur: 1cm;
+  /* Ce que l'écran laisse de chaque côté du cadre de tablette debout. La zone d'entrée des
+     parents la couvre EN PLUS de sa largeur utile : posée à droite de la fenêtre, elle
+     tombait sinon entièrement dans la marge sur un grand écran, et la bande amputait
+     quand même sa place pour rien. */
+  --marge-hors-cadre: max(0px, calc((100vw - min(100vw, 100dvh * 0.625)) / 2));
+
+  --duree-retour-visuel: 120ms;
+
+  /* Le ciel de Lucas : un dégradé doux, assez pâle pour que les photos ressortent */
+  --ciel-haut: #a9dcfb;
+  --ciel-bas: #dff2ff;
+
+  --blanc: #ffffff;
+  --encre: #12304f;          /* 13,4:1 sur blanc, 7,7:1 au minimum sur les pastels ci-dessous */
+
+  --titre: 'Fredoka', ui-rounded, 'SF Pro Rounded', 'Segoe UI Variable Display',
+           system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #app {
+  height: 100%;
+  /* Sur un téléphone, 100 % se résout contre le viewport de mise en page, plus haut que la
+     partie réellement visible sous la barre d'adresse : la dernière rangée passait sous
+     l'écran. `dvh` suit la hauteur visible, et la ligne précédente reste le repli pour un
+     navigateur qui l'ignore. */
+  height: 100dvh;
+  margin: 0;
+  background: linear-gradient(to bottom, var(--ciel-haut), var(--ciel-bas));
+  color: var(--encre);
+  font-family: var(--titre);
+  /* un enfant qui appuie fort ne doit ni sélectionner du texte ni zoomer par accident */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}
+
+/**
+ * L'impression (D20) : la grille sur papier, plastifiée dans le sac, est la parade classique
+ * en communication alternative le jour où la batterie est vide ou la tablette oubliée.
+ * Seules les planches à imprimer restent ; l'écran de l'enfant comme l'espace parents
+ * disparaissent, avec leurs boutons, leurs ombres et leurs animations.
+ */
+@media print {
+  html,
+  body {
+    height: auto;
+    overflow: visible;
+    /* le dégradé du ciel viderait une cartouche d'encre par feuille */
+    background: #fff !important;
+  }
+
+  #app > *:not([data-planches-papier]) {
+    display: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+}

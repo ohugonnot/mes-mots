@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dev-dist/
+test-results/
+playwright-report/
+.DS_Store
+*.local
+# les deux dossiers de captures se refont par un test ; nommés précisément, pour que les
+# quelques images gardées à la main dans `docs/captures/` restent suivies
+/captures/
+notice/captures/
+notice/planche-contact-*.png
