@@ -72,6 +72,27 @@ test.describe('E14 : la grille sur papier', () => {
     expect(surPapier).toEqual(surEcran)
   })
 
+  /**
+   * Le dessin est ce que l'enfant reconnaît : sur une feuille posée sur la table, un
+   * pictogramme réduit à un timbre au milieu du vide ne se lit plus à bout de bras. La
+   * vignette est taillée pour les cartes de l'espace parents, où elle fait 44 px de haut,
+   * et rien ne la redimensionnait sur le papier.
+   */
+  test('sur le papier, le dessin remplit sa case', async ({ page }) => {
+    await enModeImpression(page)
+
+    const mesures = await page
+      .locator('[data-grille-papier="maison"] [data-case-papier]')
+      .first()
+      .evaluate((cellule) => {
+        const dessin = cellule.querySelector('.dessin')!.getBoundingClientRect()
+        const image = cellule.querySelector('[data-vignette]')!.getBoundingClientRect()
+        return { dessin: dessin.height, image: image.height }
+      })
+
+    expect(mesures.image).toBeGreaterThan(mesures.dessin * 0.8)
+  })
+
   test('le bouton d impression vit à côté de la sauvegarde, deux gestes de la même famille', async ({
     page,
   }) => {

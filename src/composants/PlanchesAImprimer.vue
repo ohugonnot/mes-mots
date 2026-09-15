@@ -149,6 +149,14 @@ function emplacementsDe(planche: Planche) {
     padding: 2mm;
   }
 
+  /* La vignette est taillée pour les cartes de l'espace parents, 44 px de haut. Une case de
+     feuille A4 en fait quatre fois plus : sans cette reprise le pictogramme s'imprime en
+     timbre au milieu du vide, et une planche posée sur la table ne se lit plus à bout de
+     bras. `:deep` parce que l'image appartient à `VignetteCase`. */
+  .dessin :deep(.vignette) {
+    height: 100%;
+  }
+
   .mot {
     padding: 1.5mm;
     background: var(--fond-etiquette);

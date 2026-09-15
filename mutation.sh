@@ -1034,6 +1034,14 @@ muter src/composants/PlanchesAImprimer.vue \
   "contenu: contenu && !contenu.hidden ? contenu : null," \
   "contenu: contenu ? contenu : null," \
   "D38 un mot cache laisse sa place vide sur le papier" e2e
+muter src/composants/PlanchesAImprimer.vue \
+  "  .dessin :deep(.vignette) {
+    height: 100%;
+  }" \
+  "  .dessin :deep(.vignette) {
+    height: 44px;
+  }" \
+  "D51 le dessin remplit sa case sur le papier, il n y reste pas en timbre" e2e
 
 # T8 : le glissement tourne la page, et la case sous le doigt renonce à parler.
 muter src/composables/glissementPage.ts \
